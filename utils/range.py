@@ -10,6 +10,11 @@ EV_SPECS = {
 DEFAULT = {"battery_kwh": 60.0, "cons_kwh_per_km": 0.17}
 
 
-ef get_spec(model: str):
+def get_spec(model: str):
     if not model: return DEFAULT
     return EV_SPECS.get(model.lower().strip(), DEFAULT)
+
+
+def estimate_range_km(model: str, soc: float) -> float:
+    s = get_spec(model); total_km = s["battery_kwh"]/s["cons_kwh_per_km"]
+    return round(total_km*(soc/100.0), 1)
