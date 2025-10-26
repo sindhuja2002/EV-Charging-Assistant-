@@ -6,9 +6,11 @@ folium
 polyline
 pandas
 """
+
+
 create virtual environment
 
-actiavte it 
+actiavate it 
 
 pip install -r requirements.txt
 
