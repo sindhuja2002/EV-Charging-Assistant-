@@ -15,3 +15,11 @@ def query_chargers(lat: float, lon: float, radius_km: float = 8.0, maxresults: i
     r.raise_for_status(); return r.json()
 
 
+
+
+def status_color(poi: dict) -> str:
+    st = poi.get("StatusType") or {}
+    if st.get("IsOperational") is True: return "green"
+    title = (st.get("Title") or "").lower()
+    if "not" in title or "planned" in title or "fault" in title or "removed" in title: return "red"
+    return "green"
