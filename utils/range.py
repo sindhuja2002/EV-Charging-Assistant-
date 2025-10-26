@@ -5,3 +5,8 @@ EV_SPECS = {
     "hyundai kona": {"battery_kwh": 64.0, "cons_kwh_per_km": 0.16},
     "bmw i4": {"battery_kwh": 83.9, "cons_kwh_per_km": 0.19},
 }
+
+
+DEFAULT = {"battery_kwh": 60.0, "cons_kwh_per_km": 0.17}
+
+
