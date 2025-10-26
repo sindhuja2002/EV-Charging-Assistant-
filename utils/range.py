@@ -10,3 +10,6 @@ EV_SPECS = {
 DEFAULT = {"battery_kwh": 60.0, "cons_kwh_per_km": 0.17}
 
 
+ef get_spec(model: str):
+    if not model: return DEFAULT
+    return EV_SPECS.get(model.lower().strip(), DEFAULT)
