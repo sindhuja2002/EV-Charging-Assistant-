@@ -1,5 +1,19 @@
-.EV_venvironment/
+EV_venvironment/
 venv/
 env/
+.venv/
+ENV/
+env.bak/
+env_old/
+# Environment files
 .env
+*.env
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+
+# IDE and notebook caches
+.ipynb_checkpoints/
 .vscode/
+.idea/
