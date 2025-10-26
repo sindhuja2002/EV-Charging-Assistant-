@@ -14,7 +14,7 @@ actiavate it
 
 pip install -r requirements.txt
 
-add your own API keys from Google (enable directions API, Places API, Maps Javascript API) and OpenChargeMap
+add your own API keys from Google (enable directions API, Places API, Maps Javascript API) and 
 
 add your own API keys from OpenChargeMap
 
