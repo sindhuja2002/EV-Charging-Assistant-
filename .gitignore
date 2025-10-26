@@ -1,1 +1,5 @@
-.EV_venvironment
+.EV_venvironment/
+venv/
+env/
+.env
+.vscode/
