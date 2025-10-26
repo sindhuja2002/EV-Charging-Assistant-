@@ -24,3 +24,8 @@ def estimate_charge_time_range_minutes(model: str, soc: float, to_soc: float = 1
     s = get_spec(model); need_kwh = s["battery_kwh"]*max(0,(to_soc-soc))/100.0
     if need_kwh <= 0: return (0, 0)
     return (int(round((need_kwh/max_kw)*60)), int(round((need_kwh/min_kw)*60)))
+
+
+
+def estimate_drive_time_minutes(range_km: float, avg_speed_kmh: float = 60.0) -> int:
+    hours = (range_km / max(1.0, avg_speed_kmh)); return int(round(hours*60))
