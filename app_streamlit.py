@@ -236,3 +236,5 @@ elif st.session_state.get("last_route"):
                             st.session_state["last_route"]["model"],
                             st.session_state["last_route"]["soc"])
     render_activity_section(st.session_state["last_route"]["pts"])
+
+
