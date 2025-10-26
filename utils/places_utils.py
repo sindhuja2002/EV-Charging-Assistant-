@@ -37,3 +37,14 @@ def nearby_places_by_type(lat: float, lon: float, ptype: str, radius_m: int = 40
 
 
 
+def directions_points(origin_lat, origin_lon, dest_lat, dest_lon, key: str | None = None):
+    api_key = key or GOOGLE_KEY; _ck(api_key)
+    url = ("https://maps.googleapis.com/maps/api/directions/json"
+           f"?origin={origin_lat},{origin_lon}&destination={dest_lat},{dest_lon}&key={api_key}")
+    
+
+
+
+    r = requests.get(url, timeout=30); r.raise_for_status(); data = r.json()
+    if not data.get("routes"): return []
+    pts = data["routes"][0]["overview_polyline"]["points"]; return polyline.decode(pts)
