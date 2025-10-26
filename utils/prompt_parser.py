@@ -26,3 +26,16 @@ def parse_prompt(prompt: str):
             dest = dest or m2.group(2).strip(' ,.;')
 
 
+
+    model = None
+    known = ['Tesla Model 3','Tesla Model Y','Nissan Leaf','Hyundai Kona','BMW i4']
+    for name in known:
+        if name.lower() in text.lower():
+            model = name; break
+        
+
+        
+    if not model:
+        m3 = re.search(r'car\s+([A-Za-z0-9 ]{3,40})', text, flags=re.IGNORECASE)
+        if m3: model = m3.group(1).strip(' ,.;')
+    return {"start": start, "dest": dest, "soc": soc, "model": model}
