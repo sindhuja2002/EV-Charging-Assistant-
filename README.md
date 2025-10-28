@@ -1,13 +1,3 @@
-"""
-streamlit
-requests
-python-dotenv
-folium
-polyline
-pandas
-"""
-
-
 create virtual environment
 
 actiavate it 
